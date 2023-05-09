@@ -1,8 +1,6 @@
 Vue.createApp({
   data() {
     return {
-      backgroundGradient: "linear-gradient(to left, white 50%, yellow 50%)",
-      alternateColor: "red",
       count: 0,
     };
   },
@@ -12,6 +10,11 @@ Vue.createApp({
     },
     reset() {
       this.count = 0;
+    },
+  },
+  computed: {
+    cssVars() {
+      return { "--percent": this.count + "%" };
     },
   },
 }).mount("#app");

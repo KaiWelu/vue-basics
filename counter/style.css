@@ -1,3 +1,11 @@
-main {
-  _background: linear-gradient(to left, white 50%, yellow 50%);
+:root {
+  /* --percent: 20%; */
+}
+
+.background-gradient {
+  background: linear-gradient(
+    to left,
+    white var(--percent),
+    yellow var(--percent)
+  );
 }

@@ -11,10 +11,10 @@
 
 <body>
     <main id="app">
-        <h1 :style="{color: alternateColor}">Counter</h1>
+        <h1>Counter</h1>
         <button @click="countUp">Count</button>
         <button @click="reset">Reset</button>
-        <div :style="{background: backgroundGradient}">{{count}}</div>
+        <div :style="cssVars" class="background-gradient">{{count}}</div>
     </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
