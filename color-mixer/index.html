@@ -12,12 +12,12 @@
 <body>
     <div id="app">
         <header>
-            <div id="range-display">
+            <div id="range-display" @change="changeHex">
                 <input id="red" type="range" step="1" min="0" max="255" :value="red" @change="changeRed">
                 <input id="green" type="range" step="1" min="0" max="255" :value="green" @change="changeGreen">
                 <input id="blue" type="range" step="1" min="0" max="255" :value="blue" @change="changeBlue">
             </div>
-            <div id="color-display" :>{{display}}</div>
+            <div id="color-display">{{hex}}</div>
         </header>
         <main v-bind:style="giveMeStyle"></main>
     </div>
