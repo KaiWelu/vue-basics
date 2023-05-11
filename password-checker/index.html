@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <main>
+            <h1>Password Checker</h1>
+            <input :type="inputType" id="passwordOne" v-model="passwordOne">
+            <input :type="inputType" id="passwordTwo" v-model="passwordTwo">
+            <button @click="passwordToggle()" v-text="buttonText">Show Password</button>
+            <ul>
+                <li>Passwords are equal</li>
+                <li>Lower Case Letters</li>
+                <li>Upper Case Letters</li>
+                <li>Contains Numbers</li>
+                <li>At least 10 characters long</li>
+            </ul>
+        </main>
+    </div>
+
+    <script src=" https://unpkg.com/vue@3/dist/vue.global.js">
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
