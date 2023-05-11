@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Checker</title>
+    <title>Password Check</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="app">
         <main>
-            <h1>Password Checker</h1>
-            <input :type="inputType" id="passwordOne" v-model="passwordOne" @input="checkEqual()">
-            <input :type="inputType" id="passwordTwo" v-model="passwordTwo" @input="checkEqual()">
-            <button @click="passwordToggle(), checkEqual()" v-text="buttonText"></button>
+            <h1>Password Check</h1>
+            <div id="input"><input :type="inputType" id="passwordOne" v-model="passwordOne" @input="checkEqual()">
+                <input :type="inputType" id="passwordTwo" v-model="passwordTwo" @input="checkEqual()">
+                <button @click="passwordToggle(), checkEqual()" v-text="buttonText"></button>
+            </div>
             <ul>
                 <li>Passwords are equal <div v-if="equality">✅</div>
                     <div v-else>❌</div>
