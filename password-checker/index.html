@@ -13,15 +13,25 @@
     <div id="app">
         <main>
             <h1>Password Checker</h1>
-            <input :type="inputType" id="passwordOne" v-model="passwordOne">
-            <input :type="inputType" id="passwordTwo" v-model="passwordTwo">
-            <button @click="passwordToggle()" v-text="buttonText">Show Password</button>
+            <input :type="inputType" id="passwordOne" v-model="passwordOne" @input="checkEqual()">
+            <input :type="inputType" id="passwordTwo" v-model="passwordTwo" @input="checkEqual()">
+            <button @click="passwordToggle(), checkEqual()" v-text="buttonText"></button>
             <ul>
-                <li>Passwords are equal</li>
-                <li>Lower Case Letters</li>
-                <li>Upper Case Letters</li>
-                <li>Contains Numbers</li>
-                <li>At least 10 characters long</li>
+                <li>Passwords are equal <div v-if="equality">✅</div>
+                    <div v-else>❌</div>
+                </li>
+                <li>Lower Case Letters <div v-if="lowerCase">✅</div>
+                    <div v-else>❌</div>
+                </li>
+                <li>Upper Case Letters <div v-if="upperCase">✅</div>
+                    <div v-else>❌</div>
+                </li>
+                <li>Contains Numbers <div v-if="containsNumbers">✅</div>
+                    <div v-else>❌</div>
+                </li>
+                <li>At least 10 characters long <div v-if="passwordLength">✅</div>
+                    <div v-else>❌</div>
+                </li>
             </ul>
         </main>
     </div>

@@ -1,0 +1,9 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  gap: 1rem;
+}
