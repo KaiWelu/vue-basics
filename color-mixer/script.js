@@ -3,7 +3,7 @@ Vue.createApp({
     return {
       red: 10,
       green: 150,
-      blue: 150,
+      blue: 150, n
       hex: "#0A9696",
     };
   },

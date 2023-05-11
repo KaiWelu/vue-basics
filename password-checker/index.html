@@ -18,7 +18,7 @@
             <h1>Password Check</h1>
             <div id="input"><input :type="inputType" id="passwordOne" v-model="passwordOne" @input="checkEqual()">
                 <input :type="inputType" id="passwordTwo" v-model="passwordTwo" @input="checkEqual()">
-                <button @click="passwordToggle(), checkEqual()" v-text="buttonText"></button>
+                <button @click="passwordToggle()" v-text="buttonText"></button>
             </div>
             <ul>
                 <li>Passwords are equal <div v-if="equality">✅</div>

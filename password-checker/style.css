@@ -30,7 +30,7 @@ input {
   padding: 0.2rem;
   font-family: "Open Sans", sans-serif;
   border: solid black 2px;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 button {
@@ -40,7 +40,7 @@ button {
   padding: 0.2rem;
   font-family: "Open Sans", sans-serif;
   border: solid black 2px;
-  border-radius: 2px;
+  border-radius: 5px;
   text-align: center;
 }
 

@@ -24,28 +24,37 @@ Vue.createApp({
       }
     },
     lowerCase() {
-      if (this.passwordOne.match(/[a-z]/) === null || this.equality === false) {
-        return false;
-      }
-      return true;
+      return this.equality && this.passwordOne.match(/[a-z]/);
+      // if (this.equality && this.passwordOne.match(/[a-z]/)) {
+      //   return true;
+      // } else {
+      //   return false;
+      // }
+      // if (this.equality === false || this.passwordOne.match(/[a-z]/) === null) {
+      //   return false;
+      // }
+      // return true;
     },
     upperCase() {
-      if (this.passwordOne.match(/[A-Z]/) === null || this.equality === false) {
-        return false;
-      }
-      return true;
+      return this.equality && this.passwordOne.match(/[A-Z]/);
+      // if (this.equality || this.passwordOne.match(/[A-Z]/)) {
+      //   return false;
+      // }
+      // return true;
     },
     containsNumbers() {
-      if (this.passwordOne.match(/[0-9]/) === null || this.equality === false) {
-        return false;
-      }
-      return true;
+      return this.equality && this.passwordOne.match(/[0-9]/);
+      // if (this.equality === false || this.passwordOne.match(/[0-9]/) === null) {
+      //   return false;
+      // }
+      // return true;
     },
     passwordLength() {
-      if (this.passwordOne.length < 10 || this.equality === false) {
-        return false;
-      }
-      return true;
+      return this.equality && this.passwordOne.length >= 10;
+      // if (this.equality === false || this.passwordOne.length < 10) {
+      //   return false;
+      // }
+      // return true;
     },
   },
 
@@ -54,11 +63,13 @@ Vue.createApp({
       this.passwordHidden = !this.passwordHidden;
     },
     checkEqual() {
-      if (this.passwordOne === this.passwordTwo && this.passwordOne !== "") {
-        this.equality = true;
-      } else {
-        this.equality = false;
-      }
+      this.equality =
+        this.passwordOne === this.passwordTwo && this.passwordOne !== "";
+      // if (this.passwordOne === this.passwordTwo && this.passwordOne !== "") {
+      //   this.equality = true;
+      // } else {
+      //   this.equality = false;
+      // }
     },
   },
 }).mount("#app");
