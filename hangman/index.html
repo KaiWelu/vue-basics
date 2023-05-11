@@ -13,12 +13,15 @@
     <div id="app">
         <header>
             <div>Active</div>
-            <div>Fails: {{ fails }}</div> <button @click="restart()">Restart</button>
+            <div>Fails: {{ fails }}</div>
+            <button @click="restart()">Restart</button>
         </header>
         <main>
-            <article v-for="char in guessWord" :key="char">
-                <div v-if="goodChars.includes(char)">{{char}}</div>
-                <div v-else>*</div>
+            <article>
+                <template v-for="char in guessWord" :key="char">
+                    <div v-if="goodChars.includes(char)">{{char}}</div>
+                    <div v-else>*</div>
+                </template>
             </article>
             <footer @click="buttonClick($event); checkForWinOrFail();">
                 <template v-for="char in alphabet" :key="char">

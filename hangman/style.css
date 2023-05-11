@@ -2,3 +2,43 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+body {
+  height: 100vh;
+}
+
+#app {
+  height: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: chartreuse;
+  gap: 2rem;
+  width: 100%;
+  height: 10vh;
+}
+
+article {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: bisque;
+}
+
+footer {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}

@@ -4,10 +4,10 @@ Vue.createApp({
       gameStates: ["start", "success", "fail"],
       gameState: "start",
       wordList: [],
-      guessWord: "kai",
+      guessWord: "KAI",
       goodChars: [],
       badChars: [],
-      alphabet: "abcdefghijklmnopqrstuvwxyz",
+      alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
       buttons: false,
     };
   },
@@ -30,7 +30,7 @@ Vue.createApp({
     },
     restart() {
       this.gameState = "start";
-      this.guessWord = "kai";
+      this.guessWord = "KAI";
       this.goodChars = [];
       this.badChars = [];
     },
