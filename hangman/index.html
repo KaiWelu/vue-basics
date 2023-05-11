@@ -16,8 +16,16 @@
             <div>Fails: {{ fails }}</div> <button @click="restart()">Restart</button>
         </header>
         <main>
-            <article></article>
-            <footer @click="buttonClick"><button :disabled="isDisabled" v-for="char in alphabet">{{char}}</button>
+            <article v-for="char in guessWord" :key="char">
+                <div v-if="goodChars.includes(char)">{{char}}</div>
+                <div v-else>*</div>
+            </article>
+            <footer @click="buttonClick($event); checkForWinOrFail();">
+                <template v-for="char in alphabet" :key="char">
+                    <button v-if="goodChars.includes(char)" disabled>{{char}}</button>
+                    <button v-else-if="badChars.includes(char)" disabled>{{char}}</button>
+                    <button v-else>{{char}}</button>
+                </template>
             </footer>
         </main>
     </div>
