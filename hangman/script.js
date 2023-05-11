@@ -4,7 +4,7 @@ Vue.createApp({
       gameStates: ["start", "success", "fail"],
       gameState: "start",
       wordList: [],
-      guessWord: "KAI",
+      guessWord: "JAVASCRIPT",
       goodChars: [],
       badChars: [],
       alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -14,6 +14,15 @@ Vue.createApp({
   computed: {
     fails() {
       return this.badChars.length;
+    },
+    activeOrFail() {
+      if (this.gameState === "success") {
+        return "Success";
+      } else if (this.gameState === "fail") {
+        return "Fail";
+      } else {
+        return "Active";
+      }
     },
   },
   methods: {
@@ -30,7 +39,7 @@ Vue.createApp({
     },
     restart() {
       this.gameState = "start";
-      this.guessWord = "KAI";
+      this.guessWord = "HALLO";
       this.goodChars = [];
       this.badChars = [];
     },

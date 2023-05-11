@@ -6,28 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="app">
         <header>
-            <div>Active</div>
+            <div>{{activeOrFail}}</div>
             <div>Fails: {{ fails }}</div>
             <button @click="restart()">Restart</button>
         </header>
         <main>
             <article>
-                <template v-for="char in guessWord" :key="char">
-                    <div v-if="goodChars.includes(char)">{{char}}</div>
-                    <div v-else>*</div>
+                <template v-for="char in guessWord">
+                    <div v-if="goodChars.includes(char)" class="good-char">{{char}}</div>
+                    <div v-else class="mystery-char">?</div>
                 </template>
             </article>
             <footer @click="buttonClick($event); checkForWinOrFail();">
-                <template v-for="char in alphabet" :key="char">
-                    <button v-if="goodChars.includes(char)" disabled>{{char}}</button>
-                    <button v-else-if="badChars.includes(char)" disabled>{{char}}</button>
-                    <button v-else>{{char}}</button>
+                <template v-for="char in alphabet">
+                    <button v-if="goodChars.includes(char)" disabled class="button-keyboard">{{char}}</button>
+                    <button v-else-if="badChars.includes(char)" disabled class="button-keyboard">{{char}}</button>
+                    <button v-else class="button-keyboard">{{char}}</button>
                 </template>
             </footer>
         </main>
