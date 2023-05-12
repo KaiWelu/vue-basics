@@ -6,34 +6,50 @@ html {
 body {
   height: 100vh;
   font-family: "Special Elite", cursive;
+  margin: 0;
 }
 
 #app {
   height: 100%;
-  margin-top: 2rem;
+  _margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background-color: darkslategray;
+  _background-color: #e5e5f7;
+  opacity: 0.8;
+  /* background-image: linear-gradient(45deg, #ffc402 50%, white 50%);
+  background-size: 10px 10px; */
+  background-color: #2bcf55;
+  opacity: 0.8;
+  background-image: radial-gradient(#ecf326 1px, transparent 1px),
+    radial-gradient(#ecf326 1px, #2bcf55 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+h1 {
 }
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: chartreuse;
+  _background-color: chartreuse;
   gap: 2rem;
-  width: 100%;
+  _width: 80%;
   height: 10vh;
 }
 
 main {
-  background-color: rgb(2, 2, 2);
+  margin-top: 2rem;
+  background-color: #fafaf300;
+  _border: solid #000000 1px;
+  _box-shadow: 10px 10px #9a9c64;
   padding: 2rem;
 }
 article {
-  width: 100%;
+  _width: 80%;
   height: 40vh;
   display: flex;
   justify-content: center;
@@ -57,7 +73,7 @@ footer {
   background-color: white;
   color: black;
   border: solid black 2px;
-  box-shadow: 3px 2px red, 6px 4px cyan;
+  box-shadow: 3px 2px #ecf326, 6px 4px black;
   border-radius: 50%;
   padding: 0.5rem;
   font-family: "Special Elite", cursive;
@@ -74,23 +90,23 @@ footer {
   background-color: black;
   color: white;
   border: solid black 2px;
-  box-shadow: 3px 2px red, 6px 4px cyan;
+  _box-shadow: 3px 2px #ecf326, 6px 4px black;
   border-radius: 50%;
   padding: 0.5rem;
   font-family: "Special Elite", cursive;
 }
 
 .bad-char {
-  all: unset;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3rem;
-  width: 3rem;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
   background-color: black;
   color: white;
   border: solid black 2px;
-  box-shadow: 3px 2px red, 6px 4px cyan;
+  _box-shadow: 3px 2px #ecf326, 6px 4px black;
   border-radius: 50%;
   padding: 0.5rem;
   font-family: "Special Elite", cursive;
@@ -102,13 +118,40 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1rem;
-  width: 1rem;
-  background-color: black;
-  color: white;
-  border: solid white 2px;
-  box-shadow: 3px 2px red, 6px 4px cyan;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  box-shadow: 3px 2px black;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.button-keyboard:hover {
+  all: unset;
+  pad: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  box-shadow: 3px 2px #ecf326, 6px 4px black;
   _border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.button-keyboard:disabled {
+  all: unset;
+  pad: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(128, 128, 128, 0);
+  color: black;
+  border: solid black 2px;
+  _box-shadow: 1px 1px black;
+  _border-radius: 50%;
+  padding: 0.75rem;
   font-family: "Special Elite", cursive;
 }
