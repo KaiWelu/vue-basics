@@ -11,16 +11,10 @@ body {
 
 #app {
   height: 100%;
-  _margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  _background-color: #e5e5f7;
-  opacity: 0.8;
-  /* background-image: linear-gradient(45deg, #ffc402 50%, white 50%);
-  background-size: 10px 10px; */
-  background-color: #2bcf55;
   opacity: 0.8;
   background-image: radial-gradient(#ecf326 1px, transparent 1px),
     radial-gradient(#ecf326 1px, #2bcf55 1px);
@@ -42,13 +36,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   height: 10vh;
 }
 
 main {
   background-color: #fafaf300;
   padding: 2rem;
+  width: 50%;
 }
 article {
   height: 40vh;
@@ -127,7 +122,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  _background-color: rgb(230, 215, 0);
+  background-color: #ecf326;
   color: black;
   border: solid black 2px;
   box-shadow: 3px 2px black;
@@ -188,4 +184,7 @@ footer {
   border: solid black 2px;
   padding: 0.75rem;
   font-family: "Special Elite", cursive;
+}
+
+.wordlist {
 }
