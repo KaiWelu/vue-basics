@@ -20,7 +20,7 @@
                 <div class="nav-element">{{activeOrFail}}</div>
                 <div class="nav-element">Fails: {{ fails }}</div>
                 <input type="password" name="newWord" id="newWord" class="nav-element" placeholder="Pick your own word!"
-                    v-model="ownWord">
+                    v-model="ownWord" @keydown.enter="restart">
                 <button @click="restart()" class="button-keyboard">Restart</button>
             </header>
             <article>

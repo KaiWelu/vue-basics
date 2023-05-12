@@ -95,4 +95,7 @@ Vue.createApp({
       }
     },
   },
+  async created() {
+    this.restart();
+  },
 }).mount("#app");
