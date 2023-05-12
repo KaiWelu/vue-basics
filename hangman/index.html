@@ -24,12 +24,17 @@
                 </div>
                 <div class="nav-div"><input type="password" name="newWord" id="newWord" class="nav-element"
                         placeholder="Pick your own word!" v-model="ownWord" @keydown.enter="restart">
+                    <button @click="toggleWords()" class="button-keyboard">Words</button>
                     <button @click="restart()" class="button-keyboard">Restart</button>
                 </div>
 
 
             </header>
             <article>
+                <div v-if="isWordlistDisplayed" class="wordlist">
+                    <div v-for="word in wordList">{{word}}</div>
+                    <button class="close-button" @click="toggleWords()">x</button>
+                </div>
                 <template v-for="char in guessWord">
                     <div v-if="goodChars.includes(char)" class="good-char">{{char}}</div>
                     <div v-else-if="gameState === 'fail'" class="bad-char">{{char}}</div>

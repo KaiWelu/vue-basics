@@ -1,7 +1,6 @@
 Vue.createApp({
   data() {
     return {
-      gameStates: ["start", "success", "fail"],
       gameState: "start",
       wordList: [
         "api",
@@ -24,6 +23,7 @@ Vue.createApp({
         "state",
         "rendering",
       ],
+      isWordlistDisplayed: false,
       guessWord: "",
       goodChars: [],
       badChars: [],
@@ -93,6 +93,9 @@ Vue.createApp({
         this.gameState = "fail";
         console.log("FAIL!");
       }
+    },
+    toggleWords() {
+      this.isWordlistDisplayed = !this.isWordlistDisplayed;
     },
   },
   async created() {

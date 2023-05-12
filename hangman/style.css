@@ -46,6 +46,7 @@ main {
   width: 50%;
 }
 article {
+  position: relative;
   height: 40vh;
   display: flex;
   justify-content: center;
@@ -155,8 +156,6 @@ footer {
   background-color: rgba(128, 128, 128, 0);
   color: black;
   border: solid black 2px;
-  _box-shadow: 1px 1px black;
-  _border-radius: 50%;
   padding: 0.75rem;
   font-family: "Special Elite", cursive;
 }
@@ -187,4 +186,35 @@ footer {
 }
 
 .wordlist {
+  position: absolute;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  border: solid black 2px;
+  box-shadow: 3px 2px black;
+}
+
+.close-button {
+  all: unset;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 100%;
+}
+
+.close-button:hover {
+  all: unset;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: white;
+  color: black;
+  border: solid black 1px;
+  padding: 0.5rem;
+  border-radius: 100%;
 }
