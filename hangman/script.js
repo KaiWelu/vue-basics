@@ -3,12 +3,32 @@ Vue.createApp({
     return {
       gameStates: ["start", "success", "fail"],
       gameState: "start",
-      wordList: [],
-      guessWord: "JAVASCRIPT",
+      wordList: [
+        "api",
+        "element",
+        "dom",
+        "selector",
+        "object",
+        "array",
+        "flexbox",
+        "gradient",
+        "grid",
+        "padding",
+        "margin",
+        "github",
+        "loop",
+        "margin",
+        "callback",
+        "boolean",
+        "string",
+        "state",
+        "rendering",
+      ],
+      guessWord: "",
       goodChars: [],
       badChars: [],
       alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-      buttons: false,
+      ownWord: "",
     };
   },
   computed: {
@@ -29,17 +49,29 @@ Vue.createApp({
     buttonClick(event) {
       if (this.guessWord.includes(event.target.textContent) === true) {
         this.goodChars.push(event.target.textContent);
-        // event.target.disabled = true;
       } else {
         this.badChars.push(event.target.textContent);
-        // event.target.disabled = true;
       }
       console.log(this.goodChars);
       console.log(this.badChars);
     },
     restart() {
+      function randomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      if (this.ownWord.length === 0) {
+        this.guessWord =
+          this.wordList[randomInt(0, this.wordList.length - 1)].toUpperCase();
+      } else {
+        this.guessWord = this.ownWord.toUpperCase();
+        this.ownWord = "";
+      }
+      console.log(this.guessWord);
+
       this.gameState = "start";
-      this.guessWord = "HALLO";
       this.goodChars = [];
       this.badChars = [];
     },

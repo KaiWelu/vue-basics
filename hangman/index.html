@@ -17,9 +17,10 @@
         <h1>HANGMAN</h1>
         <main>
             <header>
-                <div>{{activeOrFail}}</div>
-                <div>Fails: {{ fails }}</div>
-                <input type="password" name="newWord" id="newWord">
+                <div class="nav-element">{{activeOrFail}}</div>
+                <div class="nav-element">Fails: {{ fails }}</div>
+                <input type="password" name="newWord" id="newWord" class="nav-element" placeholder="Pick your own word!"
+                    v-model="ownWord">
                 <button @click="restart()" class="button-keyboard">Restart</button>
             </header>
             <article>

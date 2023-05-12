@@ -29,6 +29,8 @@ body {
 }
 
 h1 {
+  margin-bottom: 0;
+  font-size: 4rem;
 }
 
 header {
@@ -42,7 +44,7 @@ header {
 }
 
 main {
-  margin-top: 2rem;
+  _margin-top: 2rem;
   background-color: #fafaf300;
   _border: solid #000000 1px;
   _box-shadow: 10px 10px #9a9c64;
@@ -152,6 +154,31 @@ footer {
   border: solid black 2px;
   _box-shadow: 1px 1px black;
   _border-radius: 50%;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+#newWord {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  _font-size: 2rem;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.nav-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  _font-size: 2rem;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
   padding: 0.75rem;
   font-family: "Special Elite", cursive;
 }
