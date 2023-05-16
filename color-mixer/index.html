@@ -12,11 +12,12 @@
 <body>
     <div id="app">
         <header>
-            <div id="range-display" @change="changeHex">
-                <input id="red" type="range" step="1" min="0" max="255" :valu e="red" @change="changeRed">
-                <input id="green" type="range" step="1" min="0" max="255" :value="green" @change="changeGreen">
-                <input id="blue" type="range" step="1" min="0" max="255" :value="blue" @change="changeBlue">
+            <div id="range-display">
+                <input id="red" type="range" step="1" min="0" max="255" v-model="red">
+                <input id="green" type="range" step="1" min="0" max="255" v-model="green">
+                <input id="blue" type="range" step="1" min="0" max="255" v-model="blue">
             </div>
+            <button id="random" @click="getColor()">Random</button>
             <div id="color-display">{{hex}}</div>
         </header>
         <main v-bind:style="giveMeStyle"></main>

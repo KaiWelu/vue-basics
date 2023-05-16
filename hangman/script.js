@@ -52,8 +52,6 @@ Vue.createApp({
       } else {
         this.badChars.push(event.target.textContent);
       }
-      console.log(this.goodChars);
-      console.log(this.badChars);
     },
     restart() {
       function randomInt(min, max) {
@@ -69,7 +67,6 @@ Vue.createApp({
         this.guessWord = this.ownWord.toUpperCase();
         this.ownWord = "";
       }
-      console.log(this.guessWord);
 
       this.gameState = "start";
       this.goodChars = [];
@@ -88,10 +85,8 @@ Vue.createApp({
 
       if (word.size === guess.size) {
         this.gameState = "success";
-        console.log("WIN!");
       } else if (this.badChars.length === 10) {
         this.gameState = "fail";
-        console.log("FAIL!");
       }
     },
     toggleWords() {

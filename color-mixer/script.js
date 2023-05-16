@@ -2,21 +2,12 @@ Vue.createApp({
   data() {
     return {
       red: 10,
-      green: 150,
-      blue: 150, n
+      green: 20,
+      blue: 150,
       hex: "#0A9696",
     };
   },
   methods: {
-    changeRed(event) {
-      this.red = event.target.value;
-    },
-    changeGreen(event) {
-      this.green = event.target.value;
-    },
-    changeBlue(event) {
-      this.blue = event.target.value;
-    },
     changeHex() {
       function toHex(inputString) {
         let output = "0" + parseInt(inputString).toString(16);
@@ -27,6 +18,17 @@ Vue.createApp({
 
       this.hex = output.toUpperCase();
     },
+    getColor() {
+      fetch("https://dummy-apis.netlify.app/api/color")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          this.red = data.rgb.r;
+          this.green = data.rgb.g;
+          this.blue = data.rgb.b;
+        });
+    },
   },
   computed: {
     giveMeStyle() {
@@ -34,5 +36,8 @@ Vue.createApp({
         backgroundColor: `rgb(${this.red}, ${this.blue}, ${this.green})`,
       };
     },
+  },
+  async created() {
+    this.getColor();
   },
 }).mount("#app");
